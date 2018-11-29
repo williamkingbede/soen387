@@ -67,8 +67,8 @@ public class DBTasks {
 	private static final String CREATE_TABLE_HAND = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_HAND + "(\r\n" + 
 			"	gameid INT,\r\n" + 
 			"    playerid INT,\r\n" + 
-			"    version INT,\r\n" +
 			"    cardid INT,\r\n" + 
+			"    version INT,\r\n" +
 			"    \r\n" + 
 			"    FOREIGN KEY (gameid) REFERENCES game(gameid),\r\n" + 
 			"    FOREIGN KEY (playerid) REFERENCES users(userid),\r\n" + 

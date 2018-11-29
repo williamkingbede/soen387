@@ -10,7 +10,7 @@ public class Game extends DomainObject<Long> implements IGame{
 	private User challengee;
 	
 	public Game(User challenger, User challengee) {
-		this(0, 0, challenger, challengee);
+		this(0, 1, challenger, challengee);
 	}
 	
 	public Game(long id, User challenger, User challengee) {

@@ -1,8 +1,10 @@
 package domain.game;
 
+import org.dsrg.soenea.domain.interf.IDomainObject;
+
 import domain.user.User;
 
-public interface IGame {
+public interface IGame extends IDomainObject<Long>{
 
 	public User getChallenger();
 	public User getChallengee();

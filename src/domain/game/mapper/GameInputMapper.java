@@ -45,7 +45,7 @@ public class GameInputMapper implements IdentityBasedProducer{
 		return getGame(rs);
 	}
 	
-	public static Game findById(String id)  throws SQLException, MapperException {
+	public static Game find(String id)  throws SQLException, MapperException {
 		ResultSet rs = GameFinder.findById(id);
 		if(!rs.next()) throw new MapperException("Game with id " + id + " does not exist.");
 		
@@ -55,14 +55,10 @@ public class GameInputMapper implements IdentityBasedProducer{
 		}
 		return getGame(rs);
 	}
-	
-	/**
-	 * This map function matches on both username AND password. It is commonly used to verify authentication.
-	 */
 
 	public static Game findByPlayer(long playerId) throws SQLException, MapperException {
 		ResultSet rs = GameFinder.findByPlayer(playerId);
-		if(!rs.next()) throw new MapperException("Game with that Gamename/Password doesn't exist!");
+		if(!rs.next()) throw new MapperException("Game with player id " + playerId + " doesn't exist!");
 		
 		try {
 			return IdentityMap.get(rs.getLong("id"), Game.class);

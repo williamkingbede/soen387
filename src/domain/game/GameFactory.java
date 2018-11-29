@@ -10,10 +10,6 @@ import domain.user.mapper.UserInputMapper;
 
 public class GameFactory {
 	
-	/*public static  Game createNew(User challenger, User challengee) throws SQLException, MapperException{
-		return createNew(challenger, challengee);
-	}*/
-	
 	public static  Game createNew(User challenger, User challengee) throws SQLException, MapperException{
 		Game g = new Game(challenger, challengee);
 		//UoW.getCurrent().registerNew(g);
